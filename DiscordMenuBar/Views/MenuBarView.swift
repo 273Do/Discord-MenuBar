@@ -9,10 +9,10 @@ struct MenuBarView: View {
 
             Divider()
 
-            DMListView(dms: PreviewData.dms)
+            DMListView(conversations: PreviewData.conversations)
 
             Divider()
-
+            
             Button("Discordを開く") {
                 NSWorkspace.shared.open(URL(string: "discord://")!)
             }

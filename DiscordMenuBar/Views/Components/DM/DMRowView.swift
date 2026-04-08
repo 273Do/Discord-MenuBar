@@ -1,22 +1,29 @@
 import SwiftUI
 
 struct DMRowView: View {
-    let dm: DirectMessage
+    let dm: DirectConversation
 
     var body: some View {
-        Button {
-            print("click!")
+        Menu {
+            Button("Open DM"){}
+            Button("Opne VC"){}
         } label: {
             HStack {
+
                 Image(systemName: "circle.fill")
                     .symbolRenderingMode(.palette)
-//                    .foregroundColor(item.color)
-                Text(dm.user.displayName)
+                    .foregroundColor(dm.dm.user.status.color)
+
+                Text(dm.dm.user.displayName)
+                    .foregroundColor(
+                        dm.dm.hasUnreadMessages ? .primary : .secondary
+                    )
             }
         }
     }
 }
 
 #Preview {
-    DMRowView(dm: PreviewData.dms[0])
+    DMRowView(dm: PreviewData.conversations[0])
+    DMRowView(dm: PreviewData.conversations[1])
 }

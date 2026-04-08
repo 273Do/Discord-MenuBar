@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct DMListView: View {
-    let dms: [DirectMessage]
+    let conversations: [DirectConversation]
     
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(dms) { dm in
+            ForEach(conversations) { dm in
                 DMRowView(dm: dm)
             }
         }
@@ -13,5 +13,5 @@ struct DMListView: View {
 }
 
 #Preview {
-    DMListView(dms: PreviewData.dms)
+    DMListView(conversations: PreviewData.conversations)
 }

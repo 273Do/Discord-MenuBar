@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 struct User: Identifiable {
     let id: UUID
@@ -11,4 +12,13 @@ struct User: Identifiable {
 
 enum UserStatus {
     case online, idle, doNotDisturb, offline
+
+    var color: Color {
+        switch self {
+        case .online:       return .green
+        case .idle:         return .yellow
+        case .doNotDisturb: return .red
+        case .offline:      return .gray
+        }
+    }
 }
