@@ -6,5 +6,6 @@ struct DiscordMenuBarApp: App {
         MenuBarExtra("Discord", systemImage: "bubble.left.and.bubble.right.fill") {
             MenuBarView()
         }
+//        .menuBarExtraStyle(.window)
     }
 }

@@ -4,13 +4,13 @@ struct MenuBarView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Discor Menu Bar")
-                .font(.headline)
-
+            
+            AuthUserPanelView()
+            
             Divider()
-
+            
             DMListView(conversations: PreviewData.conversations)
-
+            
             Divider()
             
             Button("Quit Discord MenuBar") {
