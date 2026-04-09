@@ -13,8 +13,8 @@ struct MenuBarView: View {
 
             Divider()
             
-            Button("Discordを開く") {
-                NSWorkspace.shared.open(URL(string: "discord://")!)
+            Button("Quit Discord MenuBar") {
+                NSApplication.shared.terminate(nil)
             }
         }
         .padding()

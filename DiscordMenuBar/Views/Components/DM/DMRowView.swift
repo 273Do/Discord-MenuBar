@@ -7,8 +7,12 @@ struct DMRowView: View {
 
     var body: some View {
         Menu {
-            Button("DMを開く"){}
-            Button("VCを開く (\(vc.userCount))"){}
+            Button("Open DM") {
+                NSWorkspace.shared.open(URL(string: "discord://discord.com/channels/\(dm.channelId)")!)
+            }
+            Button("Join VC (\(vc.userCount))") {
+                NSWorkspace.shared.open(URL(string: "discord://discord.com/channels/\(vc.channelId)")!)
+            }
         } label: {
             HStack {
 
@@ -18,7 +22,8 @@ struct DMRowView: View {
 
                 Text(conversation.dm.user.displayName)
                     .foregroundColor(
-                        conversation.dm.hasUnreadMessages ? .primary : .secondary
+                        conversation.dm.hasUnreadMessages
+                            ? .primary : .secondary
                     )
             }
         }
