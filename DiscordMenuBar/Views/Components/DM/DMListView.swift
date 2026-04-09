@@ -6,7 +6,7 @@ struct DMListView: View {
     var body: some View {
         VStack(spacing: 0) {
             ForEach(conversations) { dm in
-                DMRowView(dm: dm)
+                DMRowView(conversation: dm)
             }
         }
     }

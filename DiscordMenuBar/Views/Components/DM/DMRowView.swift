@@ -1,22 +1,24 @@
 import SwiftUI
 
 struct DMRowView: View {
-    let dm: DirectConversation
+    let conversation: DirectConversation
+    var dm: DM { conversation.dm }
+    var vc: VC { conversation.vc }
 
     var body: some View {
         Menu {
-            Button("Open DM"){}
-            Button("Opne VC"){}
+            Button("DMを開く"){}
+            Button("VCを開く (\(vc.userCount))"){}
         } label: {
             HStack {
 
                 Image(systemName: "circle.fill")
                     .symbolRenderingMode(.palette)
-                    .foregroundColor(dm.dm.user.status.color)
+                    .foregroundColor(dm.user.status.color)
 
-                Text(dm.dm.user.displayName)
+                Text(conversation.dm.user.displayName)
                     .foregroundColor(
-                        dm.dm.hasUnreadMessages ? .primary : .secondary
+                        conversation.dm.hasUnreadMessages ? .primary : .secondary
                     )
             }
         }
@@ -24,6 +26,6 @@ struct DMRowView: View {
 }
 
 #Preview {
-    DMRowView(dm: PreviewData.conversations[0])
-    DMRowView(dm: PreviewData.conversations[1])
+    DMRowView(conversation: PreviewData.conversations[0])
+    DMRowView(conversation: PreviewData.conversations[1])
 }
