@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct MenuBarView: View {
+    var userState = UserState()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             
-            AuthUserPanelView()
+            AuthUserPanelView(userState: userState)
             
             Divider()
             
