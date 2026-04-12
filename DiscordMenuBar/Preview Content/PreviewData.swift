@@ -41,14 +41,14 @@ import Foundation
         static let conversations: [DirectConversation] = [
             DirectConversation(
                 dm: DM(
-                    id: "dm-1",
+                    id: UUID(),
                     channelId: "ch-1",
                     channelName: "Hoge Hoge",
                     hasUnreadMessages: true,
                     user: user
                 ),
                 vc: VC(
-                    id: "vc-1",
+                    id: UUID(),
                     channelId: "ch-2",
                     channelName: "General",
                     userCount: 3
@@ -56,14 +56,14 @@ import Foundation
             ),
             DirectConversation(
                 dm: DM(
-                    id: "dm-2",
+                    id: UUID(),
                     channelId: "ch-3",
                     channelName: "Fuga Fuga",
                     hasUnreadMessages: false,
                     user: user1
                 ),
                 vc: VC(
-                    id: "vc-2",
+                    id: UUID(),
                     channelId: "ch-4",
                     channelName: "Gaming",
                     userCount: 1
@@ -71,14 +71,14 @@ import Foundation
             ),
             DirectConversation(
                 dm: DM(
-                    id: "dm-3",
+                    id: UUID(),
                     channelId: "ch-5",
                     channelName: "Piyo Piyo",
                     hasUnreadMessages: true,
                     user: user2
                 ),
                 vc: VC(
-                    id: "vc-3",
+                    id: UUID(),
                     channelId: "ch-6",
                     channelName: "Music",
                     userCount: 5
@@ -86,18 +86,135 @@ import Foundation
             ),
             DirectConversation(
                 dm: DM(
-                    id: "dm-4",
+                    id: UUID(),
                     channelId: "ch-7",
                     channelName: "Hana Hana",
                     hasUnreadMessages: false,
                     user: user3
                 ),
                 vc: VC(
-                    id: "vc-4",
+                    id: UUID(),
                     channelId: "ch-8",
                     channelName: "Chill",
                     userCount: 2
                 )
+            ),
+        ]
+
+        static let servers: [Server] = [
+            Server(
+                id: UUID(),
+                name: "Gaming Hub",
+                channels: [
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s1",
+                        channelName: "general",
+                        hasUnreadMessages: true
+                    ),
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s2",
+                        channelName: "announcements",
+                        hasUnreadMessages: false
+                    ),
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s3",
+                        channelName: "memes",
+                        hasUnreadMessages: true
+                    ),
+                ],
+                voiceChannels: [
+                    VC(
+                        id: UUID(),
+                        channelId: "vc-s1",
+                        channelName: "General",
+                        userCount: 4
+                    ),
+                    VC(
+                        id: UUID(),
+                        channelId: "vc-s2",
+                        channelName: "Gaming",
+                        userCount: 2
+                    ),
+                ]
+            ),
+            Server(
+                id: UUID(),
+                name: "Study Group",
+                channels: [
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s4",
+                        channelName: "math",
+                        hasUnreadMessages: false
+                    ),
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s5",
+                        channelName: "programming",
+                        hasUnreadMessages: true
+                    ),
+                ],
+                voiceChannels: [
+                    VC(
+                        id: UUID(),
+                        channelId: "vc-s3",
+                        channelName: "Study Room",
+                        userCount: 3
+                    )
+                ]
+            ),
+            Server(
+                id: UUID(),
+                name: "Music Lovers",
+                channels: [
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s6",
+                        channelName: "share-music",
+                        hasUnreadMessages: false
+                    ),
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s7",
+                        channelName: "recommendations",
+                        hasUnreadMessages: false
+                    ),
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s8",
+                        channelName: "production",
+                        hasUnreadMessages: true
+                    ),
+                    Channel(
+                        id: UUID(),
+                        channelId: "ch-s9",
+                        channelName: "feedback",
+                        hasUnreadMessages: false
+                    ),
+                ],
+                voiceChannels: [
+                    VC(
+                        id: UUID(),
+                        channelId: "vc-s4",
+                        channelName: "Listening Party",
+                        userCount: 7
+                    ),
+                    VC(
+                        id: UUID(),
+                        channelId: "vc-s5",
+                        channelName: "Jam Session",
+                        userCount: 0
+                    ),
+                    VC(
+                        id: UUID(),
+                        channelId: "vc-s6",
+                        channelName: "Chill",
+                        userCount: 1
+                    ),
+                ]
             ),
         ]
     }
