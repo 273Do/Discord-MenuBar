@@ -1,7 +1,7 @@
 import Foundation
 
 struct DM: ChannelProtocol, HasUnreadMessages {
-    let id: String
+    let id: UUID
     let channelId: String
     let channelName: String
     let hasUnreadMessages: Bool

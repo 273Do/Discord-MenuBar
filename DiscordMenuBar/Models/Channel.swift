@@ -1,5 +1,7 @@
+import Foundation
+
 protocol ChannelProtocol {
-    var id: String { get }
+    var id: UUID { get }
     var channelId: String { get }
     var channelName: String { get }
 }
@@ -9,7 +11,7 @@ protocol HasUnreadMessages {
 }
 
 struct Channel: ChannelProtocol, HasUnreadMessages {
-    let id: String
+    let id: UUID
     let channelId: String
     let channelName: String
     let hasUnreadMessages: Bool
