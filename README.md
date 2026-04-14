@@ -14,6 +14,10 @@ Keep only the essential Discord features in the menu bar so you can focus on you
 - Minimal UI designed for distraction-free usage
 - Lightweight and fast
 
+<img width="578" height="604" alt="screenshot 2026-04-14 22 23 40" src="https://github.com/user-attachments/assets/e1ccca5f-9932-49e6-adb8-9dc4eac5c6fa" />
+
+> I'm new to Swift, so the code is a bit messy.
+
 ## Motivation
 
 Discord is always running, but I found it comes with a few drawbacks:
