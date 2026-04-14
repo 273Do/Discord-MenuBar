@@ -55,18 +55,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Server header
         let serverHeader = NSMenuItem()
         serverHeader.attributedTitle = NSAttributedString(
-            string: "Server",
+            string: "SERVERS",
+            attributes: [
+                .font: NSFont.systemFont(ofSize: 11, weight: .semibold),
+                .foregroundColor: NSColor.secondaryLabelColor,
+            ]
         )
         serverHeader.isEnabled = false
         menu.addItem(serverHeader)
 
         // Server list
         for server in PreviewData.servers {
-            //            let item = DMMenuItemFactory.makeMenuItem(
-            //                for: conversation,
-            //                target: self
-            //            )
-            //            menu.addItem(item)
+            let item = ServerMenuItemFactory.makeMenuItem(
+                for: server,
+                target: self
+            )
+            menu.addItem(item)
         }
 
         menu.addItem(.separator())
