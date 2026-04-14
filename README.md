@@ -1,4 +1,7 @@
-# Discord MenuBar
+# Discord MenuBar (Mock Proposal)
+
+> [!NOTE]
+> To those interested in contributing to the internal implementation using Discord RPC or similar tools: We welcome pull requests at any time!
 
 **Stay connected, stay focused.**
 
@@ -6,10 +9,14 @@ Keep only the essential Discord features in the menu bar so you can focus on you
 
 ## Features
 
-* Show Discord status
-* Quick access to Discord from the menu bar
-* Minimal UI designed for distraction-free usage
-* Lightweight and fast
+- Show Discord status
+- Quick access to Discord from the menu bar
+- Minimal UI designed for distraction-free usage
+- Lightweight and fast
+
+<img width="578" height="604" alt="screenshot 2026-04-14 22 23 40" src="https://github.com/user-attachments/assets/e1ccca5f-9932-49e6-adb8-9dc4eac5c6fa" />
+
+> I'm new to Swift, so the code is a bit messy.
 
 ## Motivation
 
@@ -22,20 +29,10 @@ Discord is always running, but I found it comes with a few drawbacks:
 To address this, I built this app to bring only the essential features into the macOS menu bar,
 allowing you to stay connected without disrupting your workflow.
 
-## Usage
-
-<!-- 1. Launch the app
-2. Access it from the macOS menu bar
-3. Click to open Discord or check your status -->
-
 ## Tech Stack
 
-* SwiftUI
-* macOS MenuBarExtra API
-
-## Contributing
-
-PRs are welcome!
+- SwiftUI
+- macOS MenuBarExtra API
 
 ## License
 
