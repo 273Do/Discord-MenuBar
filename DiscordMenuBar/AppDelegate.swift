@@ -21,7 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Auth user panel (with status submenu)
         let authItem = AuthUserMenuItemFactory.makeMenuItem(
-            userState: userState, target: self
+            userState: userState,
+            target: self
         )
         authItem.submenu?.delegate = self
         menu.addItem(authItem)
@@ -42,8 +43,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // DM list
         for conversation in PreviewData.conversations {
-            let item = DMMenuItemFactory.makeMenuItem(for: conversation, target: self)
+            let item = DMMenuItemFactory.makeMenuItem(
+                for: conversation,
+                target: self
+            )
             menu.addItem(item)
+        }
+
+        menu.addItem(.separator())
+
+        // Server header
+        let serverHeader = NSMenuItem()
+        serverHeader.attributedTitle = NSAttributedString(
+            string: "Server",
+        )
+        serverHeader.isEnabled = false
+        menu.addItem(serverHeader)
+
+        // Server list
+        for server in PreviewData.servers {
+            //            let item = DMMenuItemFactory.makeMenuItem(
+            //                for: conversation,
+            //                target: self
+            //            )
+            //            menu.addItem(item)
         }
 
         menu.addItem(.separator())
@@ -64,7 +87,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func changeStatus(_ sender: NSMenuItem) {
-        guard let status = sender.representedObject as? UserStatus else { return }
+        guard let status = sender.representedObject as? UserStatus else {
+            return
+        }
         userState.currentStatus = status
     }
 }

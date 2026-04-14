@@ -3,6 +3,8 @@ import AppKit
 /// DM の NSMenuItem を構築するファクトリ
 enum DMMenuItemFactory {
 
+    // for:引数ラベル conversation:パラメータ名
+    // 呼び出しはfor, 関数ないではconversationを使う
     static func makeMenuItem(for conversation: DirectConversation, target: AnyObject) -> NSMenuItem {
         let dm = conversation.dm
         let vc = conversation.vc
